@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!--用于TvGridLayout-->
+    <attr name="verticalSpacing" format="dimension"/>
+    <attr name="horizontalSpacing" format="dimension"/>
+
+    <!--用于Scroll-->
+    <attr format="dimension" name="selectedScrollOffsetStart"/>
+    <attr format="dimension" name="selectedScrollOffsetEnd"/>
+    <attr format="boolean" name="selectedScrollCentered"/>
+
+    <declare-styleable name="TvGridLayout">
+        <attr name="verticalSpacing" />
+        <attr name="horizontalSpacing" />
+        <attr name="orientation" />
+        <attr name="rowCount"/>
+        <attr name="columnCount"/>
+        <attr name="useDefaultMargins"/>
+        <attr name="alignmentMode" />
+        <attr name="rowOrderPreserved"/>
+        <attr name="columnOrderPreserved"/>
+    </declare-styleable>
+
+    <declare-styleable name="ScrollHelper">
+        <attr name="selectedScrollOffsetStart"/>
+        <attr name="selectedScrollOffsetEnd"/>
+        <attr name="selectedScrollCentered"/>
+    </declare-styleable>
+
+    <declare-styleable name="TvMetroLayout">
+        <attr name="selectedScrollOffsetStart"/>
+        <attr name="selectedScrollOffsetEnd"/>
+        <attr name="selectedScrollCentered"/>
+    </declare-styleable>
+
+    <!--横向滚动的GridLayout-->
+    <declare-styleable name="TvHorizontalScrollGridLayout">
+        <attr name="selectedScrollOffsetStart"/>
+        <attr name="selectedScrollOffsetEnd"/>
+        <attr name="selectedScrollCentered"/>
+
+        <attr name="verticalSpacing" />
+        <attr name="horizontalSpacing" />
+
+        <attr name="orientation" />
+        <attr name="rowCount"/>
+        <attr name="columnCount"/>
+        <attr name="useDefaultMargins"/>
+        <attr name="alignmentMode" />
+        <attr name="rowOrderPreserved"/>
+        <attr name="columnOrderPreserved"/>
+    </declare-styleable>
+    <declare-styleable name="TvHorizontalScrollGridLayout_Layout">
+        <attr name="android:layout_width"/>
+        <attr name="android:layout_height"/>
+        <attr name="android:layout_margin"/>
+        <attr name="android:layout_marginLeft"/>
+        <attr name="android:layout_marginTop"/>
+        <attr name="android:layout_marginRight"/>
+        <attr name="android:layout_marginBottom"/>
+        <attr name="layout_row"/>
+        <attr name="layout_rowSpan"/>
+        <attr name="layout_rowWeight"/>
+        <attr name="layout_column"/>
+        <attr name="layout_columnSpan"/>
+        <attr name="layout_columnWeight"/>
+        <attr name="layout_gravity" />
+    </declare-styleable>
+
+    <!--竖向滚动的GridLayout-->
+    <declare-styleable name="TvVerticalScrollGridLayout">
+        <attr name="selectedScrollOffsetStart"/>
+        <attr name="selectedScrollOffsetEnd"/>
+        <attr name="selectedScrollCentered"/>
+
+        <attr name="verticalSpacing" />
+        <attr name="horizontalSpacing" />
+
+        <attr name="orientation" />
+        <attr name="rowCount"/>
+        <attr name="columnCount"/>
+        <attr name="useDefaultMargins"/>
+        <attr name="alignmentMode" />
+        <attr name="rowOrderPreserved"/>
+        <attr name="columnOrderPreserved"/>
+    </declare-styleable>
+    <declare-styleable name="TvVerticalScrollGridLayout_Layout">
+        <attr name="android:layout_width"/>
+        <attr name="android:layout_height"/>
+        <attr name="android:layout_margin"/>
+        <attr name="android:layout_marginLeft"/>
+        <attr name="android:layout_marginTop"/>
+        <attr name="android:layout_marginRight"/>
+        <attr name="android:layout_marginBottom"/>
+        <attr name="layout_row"/>
+        <attr name="layout_rowSpan"/>
+        <attr name="layout_rowWeight"/>
+        <attr name="layout_column"/>
+        <attr name="layout_columnSpan"/>
+        <attr name="layout_columnWeight"/>
+        <attr name="layout_gravity" />
+    </declare-styleable>
+
+</resources>
