@@ -16,8 +16,8 @@ public class VerticalScrollGridLayoutActivity extends BaseActivity {
         setContentView(R.layout.activity_vertical_scroll_grid_layout);
         initFocusBorder();
 
-        TvVerticalScrollGridLayout mVerticalGridLayout = findViewById(R.id.tv_gridlayout);
-        TvGridLayout mTvGridLayout = mVerticalGridLayout.getTvGridLayout();
+        TvVerticalScrollGridLayout mScrollGridLayout = findViewById(R.id.tv_gridlayout);
+        TvGridLayout mTvGridLayout = mScrollGridLayout.getTvGridLayout();
 //        mTvGridLayout.setAdapter(); //当然也支持动态布局
         mTvGridLayout.setOnItemListener(new SimpleOnItemListener() {
             @Override
@@ -25,7 +25,7 @@ public class VerticalScrollGridLayoutActivity extends BaseActivity {
                 parent.setSelection(16);
             }
         });
-        mVerticalGridLayout.addOnScrollChangeListener(new ScrollHelper.OnScrollChangeListener() {
+        mScrollGridLayout.addOnScrollChangeListener(new ScrollHelper.OnScrollChangeListener() {
             @Override
             public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
 
@@ -36,10 +36,10 @@ public class VerticalScrollGridLayoutActivity extends BaseActivity {
 
             }
         });
-        mVerticalGridLayout.isScrolling();
-        mVerticalGridLayout.setSelectedScrollCentered(false);
-        mVerticalGridLayout.setSelectedScrollOffsetStart(Utils.dp2px(getApplicationContext(), 40));
-        mVerticalGridLayout.setSelectedScrollOffsetEnd(Utils.dp2px(getApplicationContext(), 40));
+        mScrollGridLayout.isScrolling();
+        mScrollGridLayout.setSelectedScrollCentered(false);
+        mScrollGridLayout.setSelectedScrollOffsetStart(Utils.dp2px(getApplicationContext(), 40));
+        mScrollGridLayout.setSelectedScrollOffsetEnd(Utils.dp2px(getApplicationContext(), 40));
     }
 
 }

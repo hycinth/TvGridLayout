@@ -6,6 +6,7 @@ import android.view.View;
 import com.owen.tvgridlayout.ScrollHelper;
 import com.owen.tvgridlayout.SimpleOnItemListener;
 import com.owen.tvgridlayout.TvGridLayout;
+import com.owen.tvgridlayout.TvHorizontalScrollGridLayout;
 import com.owen.tvgridlayout.TvVerticalScrollGridLayout;
 
 public class HorizontalScrollGridLayoutActivity extends BaseActivity {
@@ -16,8 +17,8 @@ public class HorizontalScrollGridLayoutActivity extends BaseActivity {
         setContentView(R.layout.activity_horizontal_scroll_grid_layout);
         initFocusBorder();
 
-        TvVerticalScrollGridLayout mVerticalGridLayout = findViewById(R.id.tv_gridlayout);
-        TvGridLayout mTvGridLayout = mVerticalGridLayout.getTvGridLayout();
+        TvHorizontalScrollGridLayout mScrollGridLayout = findViewById(R.id.tv_gridlayout);
+        TvGridLayout mTvGridLayout = mScrollGridLayout.getTvGridLayout();
 //        mTvGridLayout.setAdapter(); //当然也支持动态布局
         mTvGridLayout.setOnItemListener(new SimpleOnItemListener() {
             @Override
@@ -25,7 +26,7 @@ public class HorizontalScrollGridLayoutActivity extends BaseActivity {
                 parent.setSelection(16);
             }
         });
-        mVerticalGridLayout.addOnScrollChangeListener(new ScrollHelper.OnScrollChangeListener() {
+        mScrollGridLayout.addOnScrollChangeListener(new ScrollHelper.OnScrollChangeListener() {
             @Override
             public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
 
@@ -36,10 +37,10 @@ public class HorizontalScrollGridLayoutActivity extends BaseActivity {
 
             }
         });
-        mVerticalGridLayout.isScrolling();
-        mVerticalGridLayout.setSelectedScrollCentered(false);
-        mVerticalGridLayout.setSelectedScrollOffsetStart(Utils.dp2px(getApplicationContext(), 40));
-        mVerticalGridLayout.setSelectedScrollOffsetEnd(Utils.dp2px(getApplicationContext(), 40));
+        mScrollGridLayout.isScrolling();
+        mScrollGridLayout.setSelectedScrollCentered(false);
+        mScrollGridLayout.setSelectedScrollOffsetStart(Utils.dp2px(getApplicationContext(), 40));
+        mScrollGridLayout.setSelectedScrollOffsetEnd(Utils.dp2px(getApplicationContext(), 40));
     }
 
 }
