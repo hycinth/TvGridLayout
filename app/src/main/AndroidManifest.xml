@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".VerticalScrollGridLayoutActivity"/>
+        <activity android:name=".HorizontalScrollGridLayoutActivity"/>
+        <activity android:name=".MainActivity3"/>
     </application>
 
 </manifest>

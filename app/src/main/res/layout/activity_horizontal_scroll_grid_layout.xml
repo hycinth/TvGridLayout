@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.owen.tvgridlayout.TvHorizontalScrollGridLayout
+        android:id="@+id/tv_gridlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="40dp"
+        app:selectedScrollCentered="false"
+        app:selectedScrollOffsetStart="40dp"
+        app:selectedScrollOffsetEnd="40dp"
+        app:alignmentMode="alignBounds"
+        app:columnCount="4"
+        app:rowCount="4"
+        app:verticalSpacing="6dp"
+        app:horizontalSpacing="6dp"
+        app:columnOrderPreserved="true"
+        app:rowOrderPreserved="true"
+        app:useDefaultMargins="false"
+        >
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+    </com.owen.tvgridlayout.TvHorizontalScrollGridLayout>
+
+</LinearLayout>

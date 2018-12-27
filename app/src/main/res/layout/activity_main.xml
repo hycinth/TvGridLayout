@@ -7,14 +7,11 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <Button
+    <com.owen.tvgridlayout.TvGridLayout
+        android:id="@+id/tv_gridlayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <com.owen.tvgridlayout.TvVerticalScrollGridLayout
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:padding="20dp"
+        android:layout_height="match_parent"
+        android:padding="40dp"
         android:background="@color/colorPrimary"
         app:alignmentMode="alignBounds"
         app:horizontalSpacing="6dp"
@@ -24,506 +21,76 @@
         app:useDefaultMargins="false"
         app:columnOrderPreserved="true"
         app:rowOrderPreserved="true"
-        app:orientation="horizontal">
+        app:orientation="vertical">
 
         <TextView
             android:layout_width="0dp"
-            android:layout_height="100dp"
+            android:layout_height="0dp"
             android:background="@color/colorAccent"
             android:focusable="true"
-            app:layout_columnWeight="1"
             app:layout_gravity="fill"
+            app:layout_rowSpan="2"
+            app:layout_columnWeight="1"
             app:layout_rowWeight="1" />
 
         <TextView
             android:layout_width="0dp"
-            android:layout_height="100dp"
+            android:layout_height="0dp"
             android:background="@color/colorAccent"
             android:focusable="true"
-            app:layout_columnWeight="1"
             app:layout_gravity="fill"
+            app:layout_columnWeight="1"
             app:layout_rowWeight="1" />
 
         <TextView
             android:layout_width="0dp"
-            android:layout_height="100dp"
+            android:layout_height="0dp"
             android:background="@color/colorAccent"
             android:focusable="true"
-            app:layout_columnWeight="1"
             app:layout_gravity="fill"
+            app:layout_columnSpan="2"
+            app:layout_columnWeight="1"
             app:layout_rowWeight="1" />
 
         <TextView
             android:layout_width="0dp"
-            android:layout_height="100dp"
+            android:layout_height="0dp"
             android:background="@color/colorAccent"
             android:focusable="true"
-            app:layout_columnWeight="1"
             app:layout_gravity="fill"
+            app:layout_columnSpan="2"
+            app:layout_columnWeight="1"
             app:layout_rowWeight="1" />
 
         <TextView
             android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:background="@color/colorAccent"
+            android:layout_height="0dp"
+            android:background="@color/colorPrimaryDark"
             android:focusable="true"
-            app:layout_columnWeight="1"
             app:layout_gravity="fill"
+            app:layout_rowSpan="2"
+            app:layout_columnWeight="1"
             app:layout_rowWeight="1" />
 
         <TextView
             android:layout_width="0dp"
-            android:layout_height="100dp"
+            android:layout_height="0dp"
             android:background="@color/colorAccent"
             android:focusable="true"
-            app:layout_columnWeight="1"
             app:layout_gravity="fill"
+            app:layout_columnWeight="1"
             app:layout_rowWeight="1" />
 
         <TextView
             android:layout_width="0dp"
-            android:layout_height="100dp"
+            android:layout_height="0dp"
             android:background="@color/colorAccent"
             android:focusable="true"
-            app:layout_columnWeight="1"
             app:layout_gravity="fill"
+            app:layout_rowSpan="2"
+            app:layout_columnWeight="1"
             app:layout_rowWeight="1" />
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:background="@color/colorAccent"
-            android:focusable="true"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill"
-            app:layout_rowWeight="1" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:background="@color/colorAccent"
-            android:focusable="true"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill"
-            app:layout_rowWeight="1" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:background="@color/colorAccent"
-            android:focusable="true"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill"
-            app:layout_rowWeight="1" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:background="@color/colorAccent"
-            android:focusable="true"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill"
-            app:layout_rowWeight="1" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:background="@color/colorAccent"
-            android:focusable="true"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill"
-            app:layout_rowWeight="1" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:background="@color/colorAccent"
-            android:focusable="true"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill"
-            app:layout_rowWeight="1" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:background="@color/colorAccent"
-            android:focusable="true"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill"
-            app:layout_rowWeight="1" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:background="@color/colorAccent"
-            android:focusable="true"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill"
-            app:layout_rowWeight="1" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:background="@color/colorAccent"
-            android:focusable="true"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill"
-            app:layout_rowWeight="1" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:background="@color/colorAccent"
-            android:focusable="true"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill"
-            app:layout_rowWeight="1" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:background="@color/colorAccent"
-            android:focusable="true"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill"
-            app:layout_rowWeight="1" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:background="@color/colorAccent"
-            android:focusable="true"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill"
-            app:layout_rowWeight="1" />
-
-    </com.owen.tvgridlayout.TvVerticalScrollGridLayout>
-
-    <com.owen.tvgridlayout.TvMetroLayout
-        android:id="@+id/tv_metro_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="20dp">
-
-        <com.owen.tvgridlayout.TvHorizontalScrollGridLayout
-            android:layout_width="match_parent"
-            android:layout_height="180dp"
-            app:alignmentMode="alignBounds"
-            app:columnCount="4"
-            app:columnOrderPreserved="true"
-            app:horizontalSpacing="6dp"
-            app:rowCount="4"
-            app:rowOrderPreserved="true"
-            app:useDefaultMargins="false"
-            app:verticalSpacing="6dp">
-
-            <TextView
-                android:layout_width="180dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAccent"
-                android:focusable="true"
-                app:layout_columnWeight="1"
-                app:layout_gravity="fill"
-                app:layout_rowWeight="1" />
-
-            <TextView
-                android:layout_width="180dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAccent"
-                android:focusable="true"
-                app:layout_columnWeight="1"
-                app:layout_gravity="fill"
-                app:layout_rowWeight="1" />
-
-            <TextView
-                android:layout_width="180dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAccent"
-                android:focusable="true"
-                app:layout_columnWeight="1"
-                app:layout_gravity="fill"
-                app:layout_rowWeight="1" />
-
-            <TextView
-                android:layout_width="180dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAccent"
-                android:focusable="true"
-                app:layout_columnWeight="1"
-                app:layout_gravity="fill"
-                app:layout_rowWeight="1" />
-
-            <TextView
-                android:layout_width="180dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAccent"
-                android:focusable="true"
-                app:layout_columnWeight="1"
-                app:layout_gravity="fill"
-                app:layout_rowWeight="1" />
-
-            <TextView
-                android:layout_width="180dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAccent"
-                android:focusable="true"
-                app:layout_columnWeight="1"
-                app:layout_gravity="fill"
-                app:layout_rowWeight="1" />
-
-            <TextView
-                android:layout_width="180dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAccent"
-                android:focusable="true"
-                app:layout_columnWeight="1"
-                app:layout_gravity="fill"
-                app:layout_rowWeight="1" />
-
-            <TextView
-                android:layout_width="180dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAccent"
-                android:focusable="true"
-                app:layout_columnWeight="1"
-                app:layout_gravity="fill"
-                app:layout_rowWeight="1" />
-
-            <TextView
-                android:layout_width="180dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAccent"
-                android:focusable="true"
-                app:layout_columnWeight="1"
-                app:layout_gravity="fill"
-                app:layout_rowWeight="1" />
-
-            <TextView
-                android:layout_width="180dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAccent"
-                android:focusable="true"
-                app:layout_columnWeight="1"
-                app:layout_gravity="fill"
-                app:layout_rowWeight="1" />
-
-            <TextView
-                android:layout_width="180dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAccent"
-                android:focusable="true"
-                app:layout_columnWeight="1"
-                app:layout_gravity="fill"
-                app:layout_rowWeight="1" />
-
-            <TextView
-                android:layout_width="180dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAccent"
-                android:focusable="true"
-                app:layout_columnWeight="1"
-                app:layout_gravity="fill"
-                app:layout_rowWeight="1" />
-
-            <TextView
-                android:layout_width="180dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAccent"
-                android:focusable="true"
-                app:layout_columnWeight="1"
-                app:layout_gravity="fill"
-                app:layout_rowWeight="1" />
-
-            <TextView
-                android:layout_width="180dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAccent"
-                android:focusable="true"
-                app:layout_columnWeight="1"
-                app:layout_gravity="fill"
-                app:layout_rowWeight="1" />
-
-            <TextView
-                android:layout_width="180dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAccent"
-                android:focusable="true"
-                app:layout_columnWeight="1"
-                app:layout_gravity="fill"
-                app:layout_rowWeight="1" />
-
-            <TextView
-                android:layout_width="180dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAccent"
-                android:focusable="true"
-                app:layout_columnWeight="1"
-                app:layout_gravity="fill"
-                app:layout_rowWeight="1" />
-
-            <TextView
-                android:layout_width="180dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAccent"
-                android:focusable="true"
-                app:layout_columnWeight="1"
-                app:layout_gravity="fill"
-                app:layout_rowWeight="1" />
-
-            <TextView
-                android:layout_width="180dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAccent"
-                android:focusable="true"
-                app:layout_columnWeight="1"
-                app:layout_gravity="fill"
-                app:layout_rowWeight="1" />
-
-            <TextView
-                android:layout_width="180dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAccent"
-                android:focusable="true"
-                app:layout_columnWeight="1"
-                app:layout_gravity="fill"
-                app:layout_rowWeight="1" />
-
-            <TextView
-                android:layout_width="180dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAccent"
-                android:focusable="true"
-                app:layout_columnWeight="1"
-                app:layout_gravity="fill"
-                app:layout_rowWeight="1" />
-
-            <TextView
-                android:layout_width="180dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAccent"
-                android:focusable="true"
-                app:layout_columnWeight="1"
-                app:layout_gravity="fill"
-                app:layout_rowWeight="1" />
-
-            <TextView
-                android:layout_width="180dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAccent"
-                android:focusable="true"
-                app:layout_columnWeight="1"
-                app:layout_gravity="fill"
-                app:layout_rowWeight="1" />
-
-            <TextView
-                android:layout_width="180dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAccent"
-                android:focusable="true"
-                app:layout_columnWeight="1"
-                app:layout_gravity="fill"
-                app:layout_rowWeight="1" />
-
-            <TextView
-                android:layout_width="180dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAccent"
-                android:focusable="true"
-                app:layout_columnWeight="1"
-                app:layout_gravity="fill"
-                app:layout_rowWeight="1" />
-
-            <TextView
-                android:layout_width="180dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAccent"
-                android:focusable="true"
-                app:layout_columnWeight="1"
-                app:layout_gravity="fill"
-                app:layout_rowWeight="1" />
-
-            <TextView
-                android:layout_width="180dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAccent"
-                android:focusable="true"
-                app:layout_columnWeight="1"
-                app:layout_gravity="fill"
-                app:layout_rowWeight="1" />
-
-            <TextView
-                android:layout_width="180dp"
-                android:layout_height="0dp"
-                android:background="@color/colorAccent"
-                android:focusable="true"
-                app:layout_columnWeight="1"
-                app:layout_gravity="fill"
-                app:layout_rowWeight="1" />
-
-        </com.owen.tvgridlayout.TvHorizontalScrollGridLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="80dp"
-            android:gravity="center_vertical"
-            android:text="标题qqqqq" />
-
-        <com.owen.tvgridlayout.TvGridLayout
-            android:id="@+id/grid_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            app:alignmentMode="alignBounds"
-            app:columnCount="4"
-            app:columnOrderPreserved="true"
-            app:horizontalSpacing="6dp"
-            app:orientation="horizontal"
-            app:rowCount="4"
-            app:rowOrderPreserved="true"
-            app:useDefaultMargins="false"
-            app:verticalSpacing="6dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="80dp"
-            android:gravity="center_vertical"
-            android:text="标题qqqqq" />
-
-        <com.owen.tvgridlayout.TvGridLayout
-            android:id="@+id/grid_layout1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            app:alignmentMode="alignBounds"
-            app:columnCount="4"
-            app:columnOrderPreserved="true"
-            app:horizontalSpacing="6dp"
-            app:orientation="horizontal"
-            app:rowCount="4"
-            app:rowOrderPreserved="true"
-            app:useDefaultMargins="false"
-            app:verticalSpacing="6dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="标题qqqqq" />
-
-        <com.owen.tvgridlayout.TvGridLayout
-            android:id="@+id/grid_layout2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            app:alignmentMode="alignBounds"
-            app:columnCount="4"
-            app:columnOrderPreserved="true"
-            app:horizontalSpacing="6dp"
-            app:orientation="horizontal"
-            app:rowCount="4"
-            app:rowOrderPreserved="true"
-            app:useDefaultMargins="false"
-            app:verticalSpacing="6dp" />
-
-    </com.owen.tvgridlayout.TvMetroLayout>
+    </com.owen.tvgridlayout.TvGridLayout>
 
 </LinearLayout>

@@ -78,7 +78,7 @@ public class TvGridLayout extends GridLayout implements View.OnFocusChangeListen
         mAdapterDataObserver = new AdapterDataObserver() {
             @Override
             public void onAdapterDataChanged() {
-                TvGridLayout.this.onAdapterDataChanged();
+                TvGridLayout.this.onAdapterDataChanged(true);
             }
         };
     }
@@ -119,6 +119,10 @@ public class TvGridLayout extends GridLayout implements View.OnFocusChangeListen
             return;
         }
         super.addFocusables(views, direction, focusableMode);
+    }
+
+    public boolean requestDefaultFocus() {
+        return requestFocus(1);
     }
 
     @Override
@@ -236,6 +240,13 @@ public class TvGridLayout extends GridLayout implements View.OnFocusChangeListen
         return mSelectedPosition;
     }
 
+    public void setSelection(int position) {
+        View view = getChildAt(position);
+        if(null != view) {
+            view.requestFocus(1);
+        }
+    }
+
     public void setOnItemListener(OnItemListener onItemListener) {
         mOnItemListener = onItemListener;
     }
@@ -245,23 +256,38 @@ public class TvGridLayout extends GridLayout implements View.OnFocusChangeListen
     }
 
     public void setAdapter(Adapter adapter) {
+        setAdapter(adapter, false);
+    }
+
+    public void setAdapter(Adapter adapter, boolean requestFocus) {
         if (null != mAdapter) {
             mAdapter.unregisterAdapterDataObserver(mAdapterDataObserver);
         }
         this.mAdapter = adapter;
         if (null != this.mAdapter) {
             this.mAdapter.registerAdapterDataObserver(mAdapterDataObserver);
-            onAdapterDataChanged();
+            onAdapterDataChanged(requestFocus);
         }
     }
 
-    public void onAdapterDataChanged() {
+    private void onAdapterDataChanged(boolean requestFocus) {
+        boolean focus = hasFocus();
         removeAllViews();
+        mSelectedPosition = NO_POSITION;
         if (null != mAdapter && mAdapter.getItemCount() > 0) {
             for (int i = 0; i < mAdapter.getItemCount(); i++) {
                 ViewHolder holder = mAdapter.onCreateViewHolder(i, getContext(), this);
                 addView(holder.itemView, holder.createLayoutParams());
             }
+        }
+        if(focus && requestFocus) {
+            // 刷新数据后，尝试恢复焦点
+            post(new Runnable() {
+                @Override
+                public void run() {
+                    requestDefaultFocus();
+                }
+            });
         }
     }
 
