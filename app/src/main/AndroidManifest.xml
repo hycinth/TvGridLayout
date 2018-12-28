@@ -19,7 +19,7 @@
 
         <activity android:name=".VerticalScrollGridLayoutActivity"/>
         <activity android:name=".HorizontalScrollGridLayoutActivity"/>
-        <activity android:name=".MainActivity3"/>
+        <activity android:name=".MetroActivity"/>
     </application>
 
 </manifest>

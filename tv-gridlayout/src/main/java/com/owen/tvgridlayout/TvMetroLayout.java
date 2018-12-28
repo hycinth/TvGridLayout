@@ -26,7 +26,7 @@ public class TvMetroLayout extends ScrollView {
     public static final int SCROLL_STATE_SCROLLING = 1;
 
     private SlidingMetroStrip mSlidingMetroStrip;
-    private ScrollHelper mScrollHelper;
+    private ScrollMetroHelper mScrollHelper;
     private FixedSpeedScroller mScroller;
 
     public TvMetroLayout(Context context) {
@@ -51,7 +51,7 @@ public class TvMetroLayout extends ScrollView {
 
         mSlidingMetroStrip = new SlidingMetroStrip(context);
         mSlidingMetroStrip.setPadding(getPaddingLeft(), getPaddingTop(), getPaddingRight(), getPaddingBottom());
-        mScrollHelper = new ScrollHelper(this, mSlidingMetroStrip, attrs, true);
+        mScrollHelper = new ScrollMetroHelper(this, mSlidingMetroStrip, attrs, true);
         super.addView(mSlidingMetroStrip, 0, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
         super.setPadding(0, 0, 0, 0);
     }
@@ -160,6 +160,26 @@ public class TvMetroLayout extends ScrollView {
     @Override
     public void addView(View child, int index, ViewGroup.LayoutParams params) {
         mScrollHelper.addView(child, index, params);
+    }
+
+    @Override
+    protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
+        return super.checkLayoutParams(p) || mScrollHelper.checkLayoutParams(p);
+    }
+
+    @Override
+    protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams lp) {
+        return mScrollHelper.generateLayoutParams(lp);
+    }
+
+    @Override
+    public LayoutParams generateLayoutParams(AttributeSet attrs) {
+        return mScrollHelper.generateLayoutParams(attrs);
+    }
+
+    @Override
+    protected LayoutParams generateDefaultLayoutParams() {
+        return mScrollHelper.generateDefaultLayoutParams();
     }
 
     @Override

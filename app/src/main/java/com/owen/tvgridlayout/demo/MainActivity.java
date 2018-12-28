@@ -58,6 +58,11 @@ public class MainActivity extends BaseActivity {
                 if(position == 4) {
                     startActivity(new Intent(getApplicationContext(), HorizontalScrollGridLayoutActivity.class));
                 }
+
+                if(position == 6) {
+                    startActivity(new Intent(getApplicationContext(), MetroActivity.class));
+                }
+
             }
         });
         tvGridLayout.setOnFocusChangeListener(new View.OnFocusChangeListener() {
