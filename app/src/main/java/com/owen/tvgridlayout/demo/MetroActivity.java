@@ -2,6 +2,7 @@ package com.owen.tvgridlayout.demo;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,7 +65,7 @@ public class MetroActivity extends BaseActivity {
         tvGridLayout1.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-//                Log.i("zsq", "onFocusChange hasFocus="+hasFocus);
+                Log.i("zsq", "onFocusChange hasFocus="+hasFocus + " count="+((TvGridLayout)v).getRowOrColumnCount());
                 focus = hasFocus;
                 if(hasFocus) {
                     ((View)mFocusBorder).setAlpha(0);
@@ -106,7 +107,7 @@ public class MetroActivity extends BaseActivity {
 
         @Override
         public int getItemCount() {
-            return 12;
+            return 11;
         }
 
         @Override
@@ -120,7 +121,7 @@ public class MetroActivity extends BaseActivity {
             holder.colWeight = 1;
             holder.gravity = Gravity.FILL;
             holder.rowSpan = (position == 0) ? 2 : 1;
-            holder.colSpan = (position == 0 || position == 1 || position == 2 || position == 5) ? 2 : 1;
+            holder.colSpan = (position == 0 || position == 1 || position == 2 || position == 5 || position == 8) ? 2 : 1;
 
             holder.itemView.getLayoutParams().width = 0;
             holder.itemView.getLayoutParams().height = Utils.dp2px(holder.itemView.getContext(), 120);

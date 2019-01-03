@@ -36,6 +36,7 @@
             app:alignmentMode="alignBounds"
             app:columnCount="4"
             app:rowCount="2"
+            app:orientation="vertical"
             app:columnOrderPreserved="true"
             app:horizontalSpacing="6dp"
             app:rowOrderPreserved="true"
@@ -157,7 +158,7 @@
             app:columnOrderPreserved="true"
             app:horizontalSpacing="6dp"
             app:orientation="horizontal"
-            app:rowCount="3"
+            app:rowCount="5"
             app:rowOrderPreserved="true"
             app:useDefaultMargins="false"
             app:verticalSpacing="6dp" >
@@ -236,7 +237,7 @@
                 android:layout_height="120dp"
                 android:focusable="true"
                 android:background="@color/colorAccent"
-
+                app:layout_columnSpan="2"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1"/>
 
@@ -287,6 +288,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="120dp"
                 android:background="@color/colorAccent"
+                android:text="0"
                 app:layout_rowSpan="3"
                 app:layout_columnSpan="3"
                 app:layout_rowWeight="1"
@@ -296,7 +298,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:background="@color/colorAccent"
-                app:layout_rowSpan="8"
+                android:text="1"
+                app:layout_rowSpan="6"
                 app:layout_columnSpan="9"
                 app:layout_rowWeight="1"
                 app:layout_columnWeight="1"/>
@@ -305,6 +308,27 @@
                 android:layout_width="wrap_content"
                 android:layout_height="80dp"
                 android:background="@color/colorAccent"
+                android:text="2"
+                app:layout_columnSpan="2"
+                app:layout_rowSpan="2"
+                app:layout_rowWeight="1"
+                app:layout_columnWeight="1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:background="@color/colorAccent"
+                android:text="3"
+                app:layout_columnSpan="2"
+                app:layout_rowSpan="2"
+                app:layout_rowWeight="1"
+                app:layout_columnWeight="1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:background="@color/colorAccent"
+                android:text="4"
                 app:layout_columnSpan="2"
                 app:layout_rowSpan="2"
                 app:layout_rowWeight="1"
@@ -314,6 +338,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:background="@color/colorAccent"
+                android:text="5"
                 app:layout_columnSpan="2"
                 app:layout_rowSpan="2"
                 app:layout_rowWeight="1"
@@ -321,8 +346,9 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="120dp"
                 android:background="@color/colorAccent"
+                android:text="6"
                 app:layout_columnSpan="3"
                 app:layout_rowSpan="3"
                 app:layout_rowWeight="1"
@@ -348,25 +374,7 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:background="@color/colorAccent"
-                app:layout_columnSpan="2"
-                app:layout_rowSpan="2"
-                app:layout_rowWeight="1"
-                app:layout_columnWeight="1"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:background="@color/colorAccent"
-                app:layout_columnSpan="2"
-                app:layout_rowSpan="2"
-                app:layout_rowWeight="1"
-                app:layout_columnWeight="1"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="120dp"
                 android:background="@color/colorAccent"
                 app:layout_columnSpan="4"
                 app:layout_rowSpan="3"

@@ -17,7 +17,7 @@
         app:horizontalSpacing="6dp"
         app:verticalSpacing="6dp"
         app:rowCount="4"
-        app:columnCount="4"
+        app:columnCount="3"
         app:useDefaultMargins="false"
         app:columnOrderPreserved="true"
         app:rowOrderPreserved="true"

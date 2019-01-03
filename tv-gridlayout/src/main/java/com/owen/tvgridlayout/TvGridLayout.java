@@ -81,6 +81,37 @@ public class TvGridLayout extends GridLayout implements View.OnFocusChangeListen
                 TvGridLayout.this.onAdapterDataChanged(true);
             }
         };
+
+        addInitChild();
+    }
+
+    /**
+     * 初始占位View
+     * 具体解释请见{@link InitView}
+     */
+    private void addInitChild() {
+        int count = getRowOrColumnCount();
+        for(int i=0; i < count; i++) {
+            View view = new InitView(getContext());
+            Spec colSpec = GridLayout.spec(-2147483648, 1, getOrientation() == VERTICAL ? 0 : 1);
+            Spec rowSpec = GridLayout.spec(-2147483648, 1, getOrientation() == VERTICAL ? 1 : 0);
+            LayoutParams params = new LayoutParams(rowSpec, colSpec);
+            params.width = 0;
+            params.height = 0;
+            addView(view, params);
+        }
+    }
+
+    @Override
+    public void removeAllViews() {
+        int start = getRowOrColumnCount();
+        if(getChildCount() > getRowOrColumnCount() && start >= 0) {
+            removeViews(start, getChildCount() - start);
+        }
+    }
+
+    public int getRowOrColumnCount() {
+        return getOrientation() == VERTICAL ? getRowCount() : getColumnCount();
     }
 
     @Override
@@ -98,11 +129,22 @@ public class TvGridLayout extends GridLayout implements View.OnFocusChangeListen
         return super.generateDefaultLayoutParams();
     }
 
+    private int getFirstFocusableViewPosition() {
+        int count = getChildCount();
+        for(int i = getRowOrColumnCount(); i < count; i++) {
+            View view = getChildAt(i);
+            if(null != view && view.isFocusable()) {
+                return i;
+            }
+        }
+        return NO_POSITION;
+    }
+
     @Override
     protected boolean onRequestFocusInDescendants(int direction, Rect previouslyFocusedRect) {
         //焦点记忆
-        final int position = mSelectedPosition == NO_POSITION ? 0 : mSelectedPosition;
-        View child = getChildAt(position);
+        final int index = mSelectedPosition == NO_POSITION ? getFirstFocusableViewPosition() : mSelectedPosition + getRowOrColumnCount();
+        View child = getChildAt(index);
         if (null != child) {
             if(null != getOnFocusChangeListener()) {
                 getOnFocusChangeListener().onFocusChange(this, true);
@@ -127,21 +169,20 @@ public class TvGridLayout extends GridLayout implements View.OnFocusChangeListen
 
     @Override
     public void onViewAdded(View child) {
+        if(child instanceof InitView) {
+            return;
+        }
+
         if (!getUseDefaultMargins()) {
             //行列间距
             int vs = mVerticalSpacing / 2;
             int hs = mHorizontalSpacing / 2;
             LayoutParams params = (LayoutParams) child.getLayoutParams();
-//            int ml = params.leftMargin + hs;
-//            int mt = params.topMargin + vs;
-//            int mr = params.rightMargin + hs;
-//            int mb = params.bottomMargin + vs;
-//            params.setMargins(ml, mt, mr, mb);
             params.setMargins(hs, vs, hs, vs);
         }
 
         //焦点和点击监听
-        if (null == child.getOnFocusChangeListener()) {
+        if (child.isFocusable() && null == child.getOnFocusChangeListener()) {
             child.setOnFocusChangeListener(this);
         }
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1 || !child.hasOnClickListeners()) {
@@ -176,7 +217,7 @@ public class TvGridLayout extends GridLayout implements View.OnFocusChangeListen
 
     @Override
     public void onFocusChange(View child, boolean hasFocus) {
-        int position = indexOfChild(child);
+        int position = indexOfChild(child) - getRowOrColumnCount();
         if (hasFocus) {
             removeCallbacks(mLostFocusRunnable);
             mSelectedPosition = position;
@@ -203,7 +244,7 @@ public class TvGridLayout extends GridLayout implements View.OnFocusChangeListen
     @Override
     public void onClick(View child) {
         if (null != mOnItemListener) {
-            int position = indexOfChild(child);
+            int position = indexOfChild(child) - getRowOrColumnCount();
             mOnItemListener.onItemClick(this, child, position);
         }
     }
@@ -241,10 +282,14 @@ public class TvGridLayout extends GridLayout implements View.OnFocusChangeListen
     }
 
     public void setSelection(int position) {
-        View view = getChildAt(position);
+        View view = getChildView(position);
         if(null != view) {
             view.requestFocus(1);
         }
+    }
+
+    public View getChildView(int position) {
+        return getChildAt(position + getRowOrColumnCount());
     }
 
     public void setOnItemListener(OnItemListener onItemListener) {
@@ -387,5 +432,17 @@ public class TvGridLayout extends GridLayout implements View.OnFocusChangeListen
         public abstract int getItemLayout(int position, int viewType);
 
         public abstract void onBindViewHolder(@NonNull ViewHolder holder, T item, int position, int viewType);
+    }
+
+    /**
+     * 初始占位View(初始宽高均为0，只为占满一行或一列数据)
+     * 由于GridLayout的布局不完善，有时布局不按我们所想的布局来展示。
+     * 后来发现，只要先把一行或一列填满view后再布局我们所想要的就可以完美的来展示了。
+     */
+    private class InitView extends View {
+
+        public InitView(Context context) {
+            super(context);
+        }
     }
 }
