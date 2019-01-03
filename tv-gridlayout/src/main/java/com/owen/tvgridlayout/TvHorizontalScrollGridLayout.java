@@ -2,6 +2,7 @@ package com.owen.tvgridlayout;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Rect;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
@@ -44,8 +45,7 @@ public class TvHorizontalScrollGridLayout extends HorizontalScrollView {
         setClipChildren(false);
         setClipToPadding(false);
 
-        mTvGridLayout = new TvGridLayout(context, attrs, true);
-        mTvGridLayout.setOrientation(GridLayout.VERTICAL);
+        mTvGridLayout = new TvGridLayout(context, attrs, true, GridLayout.VERTICAL);
         mTvGridLayout.setPadding(getPaddingLeft(), getPaddingTop(), getPaddingRight(), getPaddingBottom());
         mScrollGridHelper = new ScrollGridHelper(this, mTvGridLayout, attrs, false);
         super.addView(mTvGridLayout, 0, new FrameLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT));

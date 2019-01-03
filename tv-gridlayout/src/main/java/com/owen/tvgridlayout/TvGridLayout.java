@@ -30,14 +30,14 @@ public class TvGridLayout extends GridLayout implements View.OnFocusChangeListen
     private int mVerticalSpacing;
     private int mHorizontalSpacing;
 
-    TvGridLayout(Context context, AttributeSet attrs, boolean initSuperAttrs) {
+    TvGridLayout(Context context, AttributeSet attrs, boolean initSuperAttrs, int orientation) {
         super(context);
-        init(attrs, initSuperAttrs);
+        init(attrs, initSuperAttrs, orientation);
     }
 
     public TvGridLayout(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        init(attrs, false);
+        init(attrs, false, GridLayout.HORIZONTAL);
     }
 
     public TvGridLayout(Context context, AttributeSet attrs) {
@@ -48,7 +48,7 @@ public class TvGridLayout extends GridLayout implements View.OnFocusChangeListen
         this(context, null, 0);
     }
 
-    private void init(AttributeSet attrs, boolean initSuperAttrs) {
+    private void init(AttributeSet attrs, boolean initSuperAttrs, int orientation) {
         setClipToPadding(false);
         setClipChildren(false);
         setFocusable(true);
@@ -64,7 +64,7 @@ public class TvGridLayout extends GridLayout implements View.OnFocusChangeListen
                 if (initSuperAttrs) {
                     this.setRowCount(typedArray.getInt(R.styleable.TvGridLayout_rowCount, -2147483648));
                     this.setColumnCount(typedArray.getInt(R.styleable.TvGridLayout_columnCount, -2147483648));
-                    this.setOrientation(typedArray.getInt(R.styleable.TvGridLayout_orientation, 0));
+                    this.setOrientation(typedArray.getInt(R.styleable.TvGridLayout_orientation, orientation));
                     this.setUseDefaultMargins(typedArray.getBoolean(R.styleable.TvGridLayout_useDefaultMargins, false));
                     this.setAlignmentMode(typedArray.getInt(R.styleable.TvGridLayout_alignmentMode, 1));
                     this.setRowOrderPreserved(typedArray.getBoolean(R.styleable.TvGridLayout_rowOrderPreserved, true));

@@ -44,8 +44,7 @@ public class TvVerticalScrollGridLayout extends ScrollView {
         setClipChildren(false);
         setClipToPadding(false);
 
-        mTvGridLayout = new TvGridLayout(context, attrs, true);
-        mTvGridLayout.setOrientation(GridLayout.HORIZONTAL);
+        mTvGridLayout = new TvGridLayout(context, attrs, true, GridLayout.HORIZONTAL);
         mTvGridLayout.setPadding(getPaddingLeft(), getPaddingTop(), getPaddingRight(), getPaddingBottom());
         mScrollGridHelper = new ScrollGridHelper(this, mTvGridLayout, attrs, true);
         super.addView(mTvGridLayout, 0, new FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));

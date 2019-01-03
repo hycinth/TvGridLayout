@@ -27,8 +27,7 @@
         app:columnCount="2"
         app:useDefaultMargins="false"
         app:columnOrderPreserved="true"
-        app:rowOrderPreserved="true"
-        app:orientation="horizontal">
+        app:rowOrderPreserved="true">
 
         <TextView
             android:layout_width="0dp"
