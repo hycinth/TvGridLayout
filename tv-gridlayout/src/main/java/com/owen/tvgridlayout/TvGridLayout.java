@@ -104,10 +104,13 @@ public class TvGridLayout extends GridLayout implements View.OnFocusChangeListen
 
     @Override
     public void removeAllViews() {
-        int start = getRowOrColumnCount();
+        super.removeAllViews();
+        addInitChild();
+
+        /*int start = getRowOrColumnCount();
         if(getChildCount() > getRowOrColumnCount() && start >= 0) {
             removeViews(start, getChildCount() - start);
-        }
+        }*/
     }
 
     public int getRowOrColumnCount() {
