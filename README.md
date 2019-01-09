@@ -16,7 +16,9 @@
 
 ![](https://github.com/zhousuqiang/TvRecyclerView/blob/master/images/qq.png)
 
-TvRecyclerView框架[TvRecyclerView](https://github.com/zhousuqiang/TvRecyclerView)
+TvRecyclerView框架[TvRecyclerView](https://github.com/zhousuqiang/TvFocusBorder)
+
+TvFocusBorder 焦点框架[TvRecyclerView](https://github.com/zhousuqiang/TvRecyclerView)
 
 Tab框架[TvTabLayout](https://github.com/zhousuqiang/TvTabLayout)
 
