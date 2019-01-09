@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.Rect;
 import android.os.Build;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -119,6 +120,9 @@ public class ScrollHelper {
         int screenTop = mScrollView.getScrollY();
         int screenBottom = screenTop + height;
 
+        int childHeight = mScrollView.getChildAt(0).getHeight();
+        int childPaddingBottom = mScrollView.getChildAt(0).getPaddingBottom();
+
         if(mIsSelectedScrollCentered && !rect.isEmpty()) {
             mSelectedScrollOffsetStart = height - mScrollView.getPaddingTop() - mScrollView.getPaddingBottom() - rect.height();
             mSelectedScrollOffsetStart /= 2f;
@@ -128,8 +132,10 @@ public class ScrollHelper {
         if (rect.top > 0) {
             screenTop += mSelectedScrollOffsetStart;
         }
-        if (rect.bottom < mScrollView.getChildAt(0).getHeight()) {
+        if (rect.bottom < (childHeight - childPaddingBottom)) {
             screenBottom -= mSelectedScrollOffsetEnd;
+        } else {
+            screenBottom -= childPaddingBottom;
         }
 
         int scrollYDelta = 0;
@@ -139,7 +145,7 @@ public class ScrollHelper {
             } else {
                 scrollYDelta += (rect.bottom - screenBottom);
             }
-            int bottom = mScrollView.getChildAt(0).getBottom();
+            int bottom = mScrollView.getChildAt(0).getBottom()  - childPaddingBottom;
             int distanceToBottom = bottom - screenBottom;
             scrollYDelta = Math.min(scrollYDelta, distanceToBottom);
         } else if (rect.top < screenTop && rect.bottom < screenBottom) {

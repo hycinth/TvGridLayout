@@ -45,6 +45,7 @@
             android:focusable="true"
             app:layout_columnWeight="1"
             app:layout_gravity="fill"
+            app:layout_rowSpan="2"
             app:layout_rowWeight="1" />
 
         <TextView
@@ -53,6 +54,101 @@
             android:background="@color/colorAccent"
             android:focusable="true"
             app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_columnSpan="2"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_columnSpan="2"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_rowSpan="2"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="0dp"
+            android:background="@color/colorAccent"
+            android:focusable="true"
+            app:layout_columnWeight="1"
+            app:layout_rowSpan="2"
+            app:layout_columnSpan="2"
             app:layout_gravity="fill"
             app:layout_rowWeight="1" />
 
@@ -116,96 +212,8 @@
             android:background="@color/colorAccent"
             android:focusable="true"
             app:layout_columnWeight="1"
-            app:layout_gravity="fill"
-            app:layout_rowWeight="1" />
-
-        <TextView
-            android:layout_width="180dp"
-            android:layout_height="0dp"
-            android:background="@color/colorAccent"
-            android:focusable="true"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill"
-            app:layout_rowWeight="1" />
-
-        <TextView
-            android:layout_width="180dp"
-            android:layout_height="0dp"
-            android:background="@color/colorAccent"
-            android:focusable="true"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill"
-            app:layout_rowWeight="1" />
-
-        <TextView
-            android:layout_width="180dp"
-            android:layout_height="0dp"
-            android:background="@color/colorAccent"
-            android:focusable="true"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill"
-            app:layout_rowWeight="1" />
-
-        <TextView
-            android:layout_width="180dp"
-            android:layout_height="0dp"
-            android:background="@color/colorAccent"
-            android:focusable="true"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill"
-            app:layout_rowWeight="1" />
-
-        <TextView
-            android:layout_width="180dp"
-            android:layout_height="0dp"
-            android:background="@color/colorAccent"
-            android:focusable="true"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill"
-            app:layout_rowWeight="1" />
-
-        <TextView
-            android:layout_width="180dp"
-            android:layout_height="0dp"
-            android:background="@color/colorAccent"
-            android:focusable="true"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill"
-            app:layout_rowWeight="1" />
-
-        <TextView
-            android:layout_width="180dp"
-            android:layout_height="0dp"
-            android:background="@color/colorAccent"
-            android:focusable="true"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill"
-            app:layout_rowWeight="1" />
-
-        <TextView
-            android:layout_width="180dp"
-            android:layout_height="0dp"
-            android:background="@color/colorAccent"
-            android:focusable="true"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill"
-            app:layout_rowWeight="1" />
-
-        <TextView
-            android:layout_width="180dp"
-            android:layout_height="0dp"
-            android:background="@color/colorAccent"
-            android:focusable="true"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill"
-            app:layout_rowWeight="1" />
-
-        <TextView
-            android:layout_width="180dp"
-            android:layout_height="0dp"
-            android:background="@color/colorAccent"
-            android:focusable="true"
-            app:layout_columnWeight="1"
+            app:layout_rowSpan="2"
+            app:layout_columnSpan="2"
             app:layout_gravity="fill"
             app:layout_rowWeight="1" />
 

@@ -18,7 +18,7 @@ import android.widget.HorizontalScrollView;
  * @email zhousuqiang@126.com
  * @date 2018/12/25
  */
-public class TvHorizontalScrollGridLayout extends HorizontalScrollView {
+public class TvHorizontalScrollGridLayout extends HorizontalScrollView implements TvMetroLayout.IMetro {
     private TvGridLayout mTvGridLayout;
     private ScrollGridHelper mScrollGridHelper;
 
@@ -160,5 +160,10 @@ public class TvHorizontalScrollGridLayout extends HorizontalScrollView {
     @Override
     public LayoutParams generateLayoutParams(AttributeSet attrs) {
         return mScrollGridHelper.generateLayoutParams(attrs);
+    }
+
+    @Override
+    public void setTvMetroLayout(TvMetroLayout tvMetroLayout) {
+        mTvGridLayout.setTvMetroLayout(tvMetroLayout);
     }
 }

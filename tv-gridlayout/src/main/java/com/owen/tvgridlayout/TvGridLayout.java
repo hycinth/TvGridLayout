@@ -2,11 +2,14 @@ package com.owen.tvgridlayout;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Paint;
+import android.graphics.Point;
 import android.graphics.Rect;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.GridLayout;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +22,7 @@ import java.util.List;
  * @email zhousuqiang@126.com
  * @date 2018/12/17
  */
-public class TvGridLayout extends GridLayout implements View.OnFocusChangeListener, View.OnClickListener {
+public class TvGridLayout extends GridLayout implements View.OnFocusChangeListener, View.OnClickListener, TvMetroLayout.IMetro {
     private static final int NO_POSITION = -1;
 
     private Adapter mAdapter;
@@ -143,8 +146,17 @@ public class TvGridLayout extends GridLayout implements View.OnFocusChangeListen
         return NO_POSITION;
     }
 
+    private TvMetroLayout mTvMetroLayout;
+    @Override
+    public void setTvMetroLayout(TvMetroLayout tvMetroLayout) {
+        mTvMetroLayout = tvMetroLayout;
+    }
+
     @Override
     protected boolean onRequestFocusInDescendants(int direction, Rect previouslyFocusedRect) {
+        boolean isMetroParent = null != mTvMetroLayout && null != mTvMetroLayout.getFocusedChild();
+        int y = isMetroParent ? mTvMetroLayout.delta : 0;
+
         //焦点记忆
         final int index = mSelectedPosition == NO_POSITION ? getFirstFocusableViewPosition() : mSelectedPosition + getRowOrColumnCount();
         View child = getChildAt(index);
@@ -152,8 +164,17 @@ public class TvGridLayout extends GridLayout implements View.OnFocusChangeListen
             if(null != getOnFocusChangeListener()) {
                 getOnFocusChangeListener().onFocusChange(this, true);
             }
+            if(isMetroParent && y != 0) {
+                Rect mTempRect = new Rect();
+                child.getDrawingRect(mTempRect);
+                mTvMetroLayout.offsetDescendantRectToMyCoords(child, mTempRect);
+                int yy = mTvMetroLayout.mScrollHelper.computeScrollDeltaToGetChildRectOnScreen(mTempRect);
+                setTag(new Point(0, y - yy));
+                mTvMetroLayout.delta = 0;
+            }
             return child.requestFocus(direction, previouslyFocusedRect);
         }
+
         return super.onRequestFocusInDescendants(direction, previouslyFocusedRect);
     }
 

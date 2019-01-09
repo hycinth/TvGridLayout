@@ -3,6 +3,7 @@ package com.owen.tvgridlayout.demo;
 import android.os.Bundle;
 import android.view.View;
 
+import com.owen.focus.AbsFocusBorder;
 import com.owen.tvgridlayout.ScrollHelper;
 import com.owen.tvgridlayout.SimpleOnItemListener;
 import com.owen.tvgridlayout.TvGridLayout;
@@ -15,7 +16,7 @@ public class HorizontalScrollGridLayoutActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_horizontal_scroll_grid_layout);
-        initFocusBorder();
+        initFocusBorder(AbsFocusBorder.Mode.TOGETHER);
 
         TvHorizontalScrollGridLayout mScrollGridLayout = findViewById(R.id.tv_gridlayout);
         TvGridLayout mTvGridLayout = mScrollGridLayout.getTvGridLayout();

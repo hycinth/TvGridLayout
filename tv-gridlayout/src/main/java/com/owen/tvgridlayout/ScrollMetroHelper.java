@@ -41,6 +41,11 @@ public class ScrollMetroHelper extends ScrollHelper{
         if(!(params instanceof LinearLayout.LayoutParams)) {
             params = new LinearLayout.LayoutParams(params);
         }
+
+        if(child instanceof TvMetroLayout.IMetro) {
+            ((TvMetroLayout.IMetro)child).setTvMetroLayout((TvMetroLayout) mScrollView);
+        }
+
         super.addView(child, index, params);
     }
 

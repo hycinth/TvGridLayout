@@ -1,1 +1,4 @@
 include ':app', ':tv-gridlayout'
+
+//include ':tv-focusborder'
+//project(':tv-focusborder').projectDir = new File('../TvFocusBorder/tv-focusborder')

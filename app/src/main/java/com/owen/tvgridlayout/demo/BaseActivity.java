@@ -18,7 +18,7 @@ import com.owen.tvgridlayout.TvGridLayout;
 public abstract class BaseActivity extends AppCompatActivity {
 
     protected FocusBorder mFocusBorder;
-    protected void initFocusBorder() {
+    protected void initFocusBorder(AbsFocusBorder.Mode mode) {
         /** 颜色焦点框 */
         mFocusBorder = new FocusBorder.Builder().asColor()
                 //阴影宽度(方法shadowWidth(18f)也可以设置阴影宽度)
@@ -44,17 +44,21 @@ public abstract class BaseActivity extends AppCompatActivity {
                 //呼吸灯效果时长
                 .breathingDuration(3000)
                 //边框动画模式
-                .animMode(AbsFocusBorder.Mode.NOLL)
+                .animMode(mode)
                 .build(this);
 
         mFocusBorder.boundGlobalFocusListener(new FocusBorder.OnFocusCallback() {
             @Nullable
             @Override
             public FocusBorder.Options onFocus(View oldFocus, View newFocus) {
-                if(newFocus instanceof TvGridLayout)
-                    return null;
-                return FocusBorder.OptionsFactory.get(1.1f, 1.1f);
+                return focus(oldFocus, newFocus);
             }
         });
+    }
+
+    protected FocusBorder.Options focus(View oldFocus, View newFocus) {
+        if(newFocus instanceof TvGridLayout)
+            return null;
+        return FocusBorder.OptionsFactory.get(1.1f, 1.1f);
     }
 }

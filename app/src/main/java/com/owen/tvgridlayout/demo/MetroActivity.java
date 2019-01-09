@@ -8,25 +8,27 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.owen.focus.AbsFocusBorder;
 import com.owen.focus.FocusBorder;
 import com.owen.tvgridlayout.ScrollHelper;
 import com.owen.tvgridlayout.SimpleOnItemListener;
 import com.owen.tvgridlayout.TvGridLayout;
+import com.owen.tvgridlayout.TvHorizontalScrollGridLayout;
 import com.owen.tvgridlayout.TvMetroLayout;
 
 public class MetroActivity extends BaseActivity {
     private TvMetroLayout mTvMetroLayout;
 
-    boolean focus;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_metro);
-        initFocusBorder();
+        initFocusBorder(AbsFocusBorder.Mode.NOLL);
 
         mTvMetroLayout = findViewById(R.id.tv_metro_layout);
+        TvHorizontalScrollGridLayout tvHorizontalScrollGridLayout = findViewById(R.id.horizontal_gridlayout);
         TvGridLayout tvGridLayout = findViewById(R.id.grid_layout);
-        final TvGridLayout tvGridLayout1 = findViewById(R.id.grid_layout1);
+        TvGridLayout tvGridLayout1 = findViewById(R.id.grid_layout1);
         TvGridLayout tvGridLayout2 = findViewById(R.id.grid_layout2);
 
         tvGridLayout.setAdapter(new RecommendAdapter());
@@ -35,19 +37,16 @@ public class MetroActivity extends BaseActivity {
 
 //        mTvMetroLayout.setSelectedScrollOffsetStart(Utils.dp2px(getApplicationContext(), 20));
 //        mTvMetroLayout.setSelectedScrollOffsetEnd(Utils.dp2px(getApplicationContext(), 20));
+
         mTvMetroLayout.addOnScrollChangeListener(new ScrollHelper.OnScrollChangeListener() {
             @Override
             public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-
+//                Log.i("qqq", "onScrollChange scrollY = " + scrollY + " getScrollY = " + mTvMetroLayout.getScrollY());
             }
 
             @Override
             public void onScrollStateChanged(View v, int newState) {
-//                Log.i("zsq", "newState="+newState);
-                if(newState == ScrollHelper.SCROLL_STATE_IDLE && focus) {
-                    focus = false;
-                    mFocusBorder.onFocus(((ViewGroup)((ViewGroup)((ViewGroup)v).getFocusedChild()).getFocusedChild()).getFocusedChild(), FocusBorder.OptionsFactory.get(1.2f, 1.2f));
-                }
+//                Log.i("qqq", "newState="+newState);
             }
         });
 
@@ -61,20 +60,9 @@ public class MetroActivity extends BaseActivity {
             }
         });
 
-
-        tvGridLayout1.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                Log.i("zsq", "onFocusChange hasFocus="+hasFocus + " count="+((TvGridLayout)v).getRowOrColumnCount());
-                focus = hasFocus;
-                if(hasFocus) {
-                    ((View)mFocusBorder).setAlpha(0);
-                    mFocusBorder.setVisible(false);
-                }
-            }
-        });
     }
 
+    // 推荐数据
     class RecommendAdapter extends TvGridLayout.Adapter<String> {
 
         @Override
@@ -103,6 +91,7 @@ public class MetroActivity extends BaseActivity {
         }
     }
 
+    // 分类数据
     class CategoryAdapter extends TvGridLayout.Adapter<String> {
 
         @Override

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.support.v7.widget.GridLayout;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -22,11 +23,8 @@ import java.lang.reflect.Field;
  * @date 2018/12/19
  */
 public class TvMetroLayout extends ScrollView {
-    public static final int SCROLL_STATE_IDLE = 0;
-    public static final int SCROLL_STATE_SCROLLING = 1;
-
     private SlidingMetroStrip mSlidingMetroStrip;
-    private ScrollMetroHelper mScrollHelper;
+    ScrollMetroHelper mScrollHelper;
     private FixedSpeedScroller mScroller;
 
     public TvMetroLayout(Context context) {
@@ -94,28 +92,28 @@ public class TvMetroLayout extends ScrollView {
         mScrollHelper.setPaddingRelative(start, top, end, bottom);
     }
 
-    /**
-     * 设置滚动时长
-     * @param duration
-     */
-    public void setScrollerDuration(int duration){
-        initScroller(getContext());
-        if(null != mScroller) {
-            mScroller.setScrollDuration(duration);
-        }
-    }
-
-    /**
-     * 获取滚动时长
-     * @return
-     */
-    public int getScrollerDuration() {
-        initScroller(getContext());
-        if(null != mScroller) {
-            return mScroller.getScrollDuration();
-        }
-        return 0;
-    }
+//    /**
+//     * 设置滚动时长
+//     * @param duration
+//     */
+//    public void setScrollerDuration(int duration){
+//        initScroller(getContext());
+//        if(null != mScroller) {
+//            mScroller.setScrollDuration(duration);
+//        }
+//    }
+//
+//    /**
+//     * 获取滚动时长
+//     * @return
+//     */
+//    public int getScrollerDuration() {
+//        initScroller(getContext());
+//        if(null != mScroller) {
+//            return mScroller.getScrollDuration();
+//        }
+//        return 0;
+//    }
 
     public void setSelectedScrollCentered(boolean selectedCentered) {
         mScrollHelper.setSelectedScrollCentered(selectedCentered);
@@ -182,9 +180,13 @@ public class TvMetroLayout extends ScrollView {
         return mScrollHelper.generateDefaultLayoutParams();
     }
 
+    int delta;
     @Override
     protected int computeScrollDeltaToGetChildRectOnScreen(Rect rect) {
-        return mScrollHelper.computeScrollDeltaToGetChildRectOnScreen(rect);
+        int d = mScrollHelper.computeScrollDeltaToGetChildRectOnScreen(rect);
+        delta = d;
+        Log.i("qqq", "computeScrollDeltaToGetChildRectOnScreen " + rect + " delta="+delta + " getScrollY="+getScrollY());
+        return d;
     }
 
     @Override
@@ -248,5 +250,9 @@ public class TvMetroLayout extends ScrollView {
             setClipToPadding(false);
             setOrientation(LinearLayout.VERTICAL);
         }
+    }
+
+    interface IMetro {
+        void setTvMetroLayout(TvMetroLayout layout);
     }
 }
